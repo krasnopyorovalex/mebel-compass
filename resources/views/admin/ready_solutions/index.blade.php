@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('breadcrumb')
-    <li class="active">Баннеры</li>
+    <li class="active">Акции</li>
 @endsection
 
 @section('content')

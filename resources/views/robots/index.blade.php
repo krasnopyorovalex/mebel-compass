@@ -1,1 +1,1 @@
-{{ $robots->value }}
+{!! $robots->value !!}

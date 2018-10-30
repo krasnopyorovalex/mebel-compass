@@ -11,8 +11,8 @@
 |
 */
 
-Route::pattern('alias', '[\dа-яa-z-]+');
-Route::pattern('catalog', '[\dа-яa-z-]+');
+Route::pattern('alias', '[\da-z-]+');
+Route::pattern('catalog', '[\da-z-]+');
 
 Auth::routes();
 
@@ -25,11 +25,11 @@ Route::get('robots.txt', 'RobotsController@show');
 
 Route::group(['middleware' => ['redirector', 'shortcode']], function () {
     Route::get('/{alias?}', 'PageController@show')->name('page.show');
-    Route::get('статьи/{alias}', 'ArticleController@show')->name('article.show');
-    Route::get('услуги/{alias}', 'ServiceController@show')->name('service.show');
+    Route::get('articles/{alias}', 'ArticleController@show')->name('article.show');
+    Route::get('services/{alias}', 'ServiceController@show')->name('service.show');
     Route::get('гостиничная-мебель/{alias}', 'CatalogController@show')->name('catalog.show');
     Route::get('гостиничная-мебель/{catalog}/{alias}', 'CatalogController@sub')->name('catalog.sub');
-    Route::get('продукт/{alias}', 'CatalogProductController@show')->name('catalog_product.show');
+    Route::get('product/{alias}', 'CatalogProductController@show')->name('catalog_product.show');
     Route::get('мебель-для-гостиниц-и-отелей/{alias}', 'ReadySolutionController@show')->name('ready_solution.show');
 });
 

@@ -18,6 +18,10 @@ class RobotsController extends Controller
     {
         $robots = $this->dispatch(new GetSeoBlockByIdQuery(2));
 
-        return view('robots.index', ['robots' => $robots]);
+        return response()
+            ->view('robots.index', [
+                'robots' => $robots
+            ], 200)
+            ->header('Content-Type', 'text/plain; charset=UTF-8');
     }
 }

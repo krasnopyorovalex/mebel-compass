@@ -12,6 +12,7 @@
 
     @includeWhen($countAbout, 'layouts.partials.count_about', ['countAbout' => $countAbout])
 
+    @if ($banners->get(1))
     <section class="section-limit bg-gray-lighter bg-image" style="background-image: url({{ $banners->get(1)->image->path }})">
         <div class="container">
             <div class="row">
@@ -23,6 +24,7 @@
             </div>
         </div>
     </section>
+    @endif
 
     <section class="section-lg bg-default">
         <div class="container text-center">
@@ -97,17 +99,19 @@
 
     @includeWhen($whyWes, 'layouts.partials.why_we', ['whyWes' => $whyWes])
 
+    @if ($banners->get(2))
     <section class="section-limit bg-gray-lighter bg-image hidden-xs" style="background-image: url({{ $banners->get(2)->image->path }});min-height: 450px">
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-lg-5 section-lg">
                     <div class="wow fadeInUpSmall heading-2" data-wow-delay=".2s" data-wow-duration="1.2s">{{ $banners->get(2)->name }}</div>
                     <p class="big wow fadeInUpSmall" data-wow-delay=".5s" data-wow-duration="1.2s">{{ strip_tags($banners->get(2)->text) }}</p>
-                    {{--<a class="banner-link wow fadeInUpSmall" href="{{ $banners->get(2)->link }}" data-wow-delay=".7s" data-wow-duration="1.2s">{{ $banners->get(2)->btn_text }}</a>--}}
+                    <a class="banner-link wow fadeInUpSmall" href="{{ $banners->get(2)->link }}" data-wow-delay=".7s" data-wow-duration="1.2s">{{ $banners->get(2)->btn_text }}</a>
                 </div>
             </div>
         </div>
     </section>
+    @endif
 
     @includeWhen($guestbook, 'layouts.partials.guestbook', ['guestbook' => $guestbook])
 

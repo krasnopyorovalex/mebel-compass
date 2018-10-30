@@ -26,6 +26,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ReadySolution extends Model
 {
+    use AutoAliasTrait;
+
     /**
      * @var array
      */

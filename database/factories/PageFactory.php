@@ -20,6 +20,7 @@ $factory->define(App\Page::class, function (Faker $faker) {
         'description' => 'Главная страница - ООО «Красбер»',
         'keywords' => '',
         'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam culpa ducimus est eum explicabo laborum, maxime minima mollitia. Aut, dolorum ea eos explicabo illum iusto necessitatibus quas reiciendis rerum voluptatem.',
-        'alias' => 'index'
+        'alias' => 'index',
+        'template' => 'page.index'
     ];
 });

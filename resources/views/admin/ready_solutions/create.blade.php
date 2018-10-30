@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('breadcrumb')
-    <li><a href="{{ route('admin.ready_solutions.index') }}">Готовые решения</a></li>
-    <li class="active">Форма добавления готового решения</li>
+    <li><a href="{{ route('admin.ready_solutions.index') }}">Акции</a></li>
+    <li class="active">Форма добавления акции</li>
 @endsection
 
 @section('content')

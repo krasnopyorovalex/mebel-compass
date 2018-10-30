@@ -32,6 +32,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Information extends Model
 {
+    use AutoAliasTrait;
+
     public $timestamps = false;
 
     /**

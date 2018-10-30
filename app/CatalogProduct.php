@@ -38,6 +38,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class CatalogProduct extends Model
 {
+    use AutoAliasTrait;
 
     public const PER_PAGE = 16;
     /**

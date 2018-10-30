@@ -82,7 +82,7 @@
                             <li class="navigation-header"><span>Навигация</span> <i class="icon-menu" title="Main pages"></i></li>
                             <li><a href="{{ route('admin.pages.index') }}"><i class="icon-compose"></i> <span>Страницы</span></a></li>
                             <li><a href="{{ route('admin.about_counts.index') }}"><i class="icon-bubble-lines4"></i> <span>О нас(счётчики)</span></a></li>
-                            <li><a href="{{ route('admin.ready_solutions.index') }}"><i class="icon-checkmark4"></i> <span>Готовые решения</span></a></li>
+                            <li><a href="{{ route('admin.ready_solutions.index') }}"><i class="icon-checkmark4"></i> <span>Акции</span></a></li>
                             <li><a href="{{ route('admin.why_wes.index') }}"><i class="icon-question7"></i> <span>Почему мы?</span></a></li>
                             <li><a href="{{ route('admin.partners.index') }}"><i class="icon-collaboration"></i> <span>С кем мы работаем</span></a></li>
                             <li><a href="{{ route('admin.banners.index') }}"><i class="icon-images3"></i> <span>Баннеры</span></a></li>

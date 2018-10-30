@@ -38,6 +38,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Catalog extends Model
 {
+    use AutoAliasTrait;
+
     /**
      * @var array
      */

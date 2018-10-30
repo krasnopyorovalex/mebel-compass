@@ -38,6 +38,8 @@ use Illuminate\Database\Eloquent\Model;
 class Page extends Model
 {
 
+    use AutoAliasTrait;
+
     private $templates = [
         'page.index' => 'Главная',
         'page.page' => 'Информационная',
