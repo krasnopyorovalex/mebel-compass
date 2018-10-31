@@ -216,10 +216,6 @@ ol.navigation {
     padding: 4px;
 }
 
-.navigation li div .item_name, .navigation li div .center-block.link__block{
-    min-width: 350px;
-}
-
 .navigation li div .actions a{
     padding-left: 10px;
 }
@@ -299,4 +295,7 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
     margin: 0 auto;
     display: block;
     max-width: 450px;
+}
+.page-content {
+    height: 95vh
 }

@@ -12,7 +12,7 @@
                 <p class="breadcrumbs-custom__title"></p>
                 <ul class="breadcrumbs-custom__path">
                     <li><a href="{{ route('page.show') }}">Главная</a></li>
-                    <li><a href="{{ route('page.show', ['alias' => 'мебель-для-гостиниц-и-отелей']) }}">Готовые решения</a></li>
+                    <li><a href="{{ route('page.show', ['alias' => 'actions']) }}">Акции</a></li>
                     <li class="active">{{ $readySolution->name }}</li>
                 </ul>
             </div>

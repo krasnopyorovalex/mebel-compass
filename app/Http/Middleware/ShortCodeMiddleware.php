@@ -45,13 +45,10 @@ class ShortCodeMiddleware
 
                     return view('layouts.partials.for_shortcodes.portfolio_list', ['portfolios' => $portfolios]);
                 },
-                '#(<p(.*)>)?{ready_solutions}(<\/p>)?#' => function () {
+                '#(<p(.*)>)?{actions}(<\/p>)?#' => function () {
                     $readySolutions = $this->dispatch(new GetAllReadySolutionsQuery(false, true));
 
                     return view('layouts.partials.ready_solutions', ['readySolutions' => $readySolutions]);
-                },
-                '#(<p(.*)>)?{plugin}(<\/p>)?#' => function () {
-                    return view('layouts.partials.plugin');
                 },
                 '#(<p(.*)>)?{our_works}(<\/p>)?#' => function () {
                     $galleries = $this->dispatch(new GetAllGalleriesQuery(true));

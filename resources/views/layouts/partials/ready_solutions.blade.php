@@ -1,5 +1,5 @@
-<section class="section-sm section-limit ready__solutions">
-    <div class="title"><a href="{{ route('page.show', ['alias' => 'мебель-для-гостиниц-и-отелей']) }}">Мебель для гостиниц и отелей - готовые решения</a></div>
+<section class="section-limit ready__solutions">
+    <div class="title"><a href="{{ route('page.show', ['alias' => 'actions']) }}">Акции</a></div>
     <div class="row justify-content-sm-center row-50">
         @foreach ($readySolutions as $readySolution)
             <div class="col-md-4">

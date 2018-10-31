@@ -27,10 +27,10 @@ Route::group(['middleware' => ['redirector', 'shortcode']], function () {
     Route::get('/{alias?}', 'PageController@show')->name('page.show');
     Route::get('articles/{alias}', 'ArticleController@show')->name('article.show');
     Route::get('services/{alias}', 'ServiceController@show')->name('service.show');
-    Route::get('гостиничная-мебель/{alias}', 'CatalogController@show')->name('catalog.show');
-    Route::get('гостиничная-мебель/{catalog}/{alias}', 'CatalogController@sub')->name('catalog.sub');
+    Route::get('catalog/{alias}', 'CatalogController@show')->name('catalog.show');
+    Route::get('catalog/{catalog}/{alias}', 'CatalogController@sub')->name('catalog.sub');
     Route::get('product/{alias}', 'CatalogProductController@show')->name('catalog_product.show');
-    Route::get('мебель-для-гостиниц-и-отелей/{alias}', 'ReadySolutionController@show')->name('ready_solution.show');
+    Route::get('actions/{alias}', 'ReadySolutionController@show')->name('ready_solution.show');
 });
 
 Route::group(['prefix' => '_root', 'middleware' => 'auth', 'namespace' => 'Admin', 'as' => 'admin.'], function () {

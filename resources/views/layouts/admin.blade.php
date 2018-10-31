@@ -167,11 +167,9 @@
                 <ul>
                     <li>Статьи - {articles}</li>
                     <li>Карта сайта - {sitemap}</li>
-                    <li>Готовые решения - {ready_solutions}</li>
+                    <li>Акции - {actions}</li>
                     <li>Наши работы - {our_works}</li>
                     <li>Почему мы - {why_wes}</li>
-                    <li>Отзывы на главной - {guestbook}</li>
-                    <li>Плагин-опросник - {plugin}</li>
                 </ul>
             </div>
 

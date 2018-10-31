@@ -69,7 +69,7 @@
     </section>
 
     <section class="recall__me hidden-xs">
-        <div class="title__form heading-4">Заказать обратный звонок</div>
+        <div class="title__form heading-4">Хочу пуфик в подарок!</div>
         <form action="{{ route('recall.send') }}" method="post" id="recall-form">
             @csrf
             <div class="form-group form-wrap_icon linear-icon-man">
