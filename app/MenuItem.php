@@ -47,4 +47,12 @@ class MenuItem extends Model
     {
         return $this->hasMany('App\MenuItem', 'parent_id', 'id')->orderBy('pos');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function image()
+    {
+        return $this->morphOne('App\Image', 'imageable');
+    }
 }

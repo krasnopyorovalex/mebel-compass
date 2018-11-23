@@ -15,7 +15,7 @@
 
             @include('layouts.partials.errors')
 
-            <form action="{{ route('admin.menu_items.store') }}" method="post">
+            <form action="{{ route('admin.menu_items.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="menu_id" value="{{ $menu }}">
 
@@ -40,6 +40,7 @@
                 </div>
 
                 @input(['name' => 'name', 'label' => 'Название'])
+                @imageInput(['name' => 'image', 'type' => 'file', 'label' => 'Выберите изображение на компьютере'])
                 @selectLink(['name' => 'link', 'label' => 'Ссылка'])
 
                 @submit_btn()

@@ -17,6 +17,7 @@ class CreateMenuItemRequest extends Request
             'link' => 'required|string|max:127',
             'menu_id' => 'required|numeric|exists:menus,id',
             'parent_id' => 'integer|exists:menu_items,id|nullable',
+            'image' => 'image',
             'pos' => 'integer|min:0|max:255'
         ];
     }

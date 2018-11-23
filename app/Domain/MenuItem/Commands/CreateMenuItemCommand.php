@@ -2,8 +2,10 @@
 
 namespace App\Domain\MenuItem\Commands;
 
+use App\Domain\Image\Commands\UploadImageCommand;
 use App\Http\Requests\Request;
 use App\MenuItem;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 
 /**
  * Class CreateMenuItemCommand
@@ -11,6 +13,7 @@ use App\MenuItem;
  */
 class CreateMenuItemCommand
 {
+    use DispatchesJobs;
 
     private $request;
 
@@ -31,7 +34,13 @@ class CreateMenuItemCommand
         $menuItem = new MenuItem();
         $menuItem->fill($this->request->all());
 
-        return $menuItem->save();
+        $menuItem->save();
+
+        if($this->request->has('image')) {
+            return $this->dispatch(new UploadImageCommand($this->request, $menuItem->id, MenuItem::class));
+        }
+
+        return true;
     }
 
 }

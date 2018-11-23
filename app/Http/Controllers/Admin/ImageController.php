@@ -19,7 +19,7 @@ class ImageController extends Controller
      * @param UpdateImageRequest $request
      * @return array
      */
-    public function update($id, UpdateImageRequest $request)
+    public function update($id, UpdateImageRequest $request): array
     {
         $this->dispatch(new UpdateImageCommand($id, $request));
 
@@ -32,7 +32,7 @@ class ImageController extends Controller
      * @param $id
      * @return array
      */
-    public function destroy($id)
+    public function destroy($id): array
     {
         $image = $this->dispatch(new GetImageByIdQuery($id));
 

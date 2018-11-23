@@ -2,6 +2,7 @@
 
 namespace App\Domain\MenuItem\Commands;
 
+use App\Domain\Image\Commands\DeleteImageCommand;
 use App\Domain\MenuItem\Queries\GetMenuItemByIdQuery;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 
@@ -34,7 +35,10 @@ class DeleteMenuItemCommand
     {
         $menuItem = $this->dispatch(new GetMenuItemByIdQuery($this->id));
 
+        if($menuItem->image) {
+            $this->dispatch(new DeleteImageCommand($menuItem->image));
+        }
+
         return $menuItem->delete();
     }
-
 }
