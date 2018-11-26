@@ -3,7 +3,7 @@
         {{-- Previous Page Link --}}
         @if ( ! $paginator->onFirstPage())
             <li>
-                <a class="icon linear-icon-arrow-left" href="{{ str_replace('?page=1', '', $paginator->previousPageUrl()) }}" rel="prev"></a>
+                <a class="icon linear-icon-arrow-left" href="{{ request()->url() }}{{ str_replace('?page=1', '', $paginator->previousPageUrl()) }}" rel="prev"></a>
             </li>
         @endif
 
@@ -20,7 +20,7 @@
                     @if ($page == $paginator->currentPage())
                         <li class="active" aria-current="page"><span>{{ $page }}</span></li>
                     @else
-                        <li><a href="{{ str_replace('?page=1', '', $url) }}">{{ $page }}</a></li>
+                        <li><a href="{{ request()->url() }}{{ str_replace('?page=1', '', $url) }}">{{ $page }}</a></li>
                     @endif
                 @endforeach
             @endif

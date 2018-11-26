@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\CatalogProduct;
+use App\Domain\Catalog\Queries\GetAllCatalogsQuery;
+use App\Domain\Catalog\Queries\GetCatalogByIdQuery;
 use App\Domain\CatalogProduct\Commands\CreateCatalogProductCommand;
 use App\Domain\CatalogProduct\Commands\DeleteCatalogProductCommand;
 use App\Domain\CatalogProduct\Commands\UpdateCatalogProductCommand;
@@ -41,6 +43,10 @@ class CatalogProductController extends Controller
     public function create($catalog)
     {
         $catalogProducts = $this->dispatch(new GetAllCatalogProductsQuery($catalog));
+
+        $excludeCatalog = $this->dispatch(new GetCatalogByIdQuery($catalog));
+
+        $catalogs = $this->dispatch(new GetAllCatalogsQuery($excludeCatalog));
         $catalogProduct = new CatalogProduct();
         $tabs = $this->dispatch(new GetAllTabsQuery());
 
@@ -48,7 +54,8 @@ class CatalogProductController extends Controller
             'catalog' => $catalog,
             'catalogProducts' => $catalogProducts,
             'labels' => $catalogProduct->getLabels(),
-            'tabs' => $tabs
+            'tabs' => $tabs,
+            'catalogs' => $catalogs
         ]);
     }
 
@@ -77,8 +84,10 @@ class CatalogProductController extends Controller
     {
         $catalogProduct = $this->dispatch(new GetCatalogProductByIdQuery($id));
         $catalogProducts = $this->dispatch(new GetAllCatalogProductsQuery($catalogProduct->catalog_id, $catalogProduct->id));
+        $catalogs = $this->dispatch(new GetAllCatalogsQuery($catalogProduct->catalog));
 
         $catalogProductRelatives = get_ids_from_array($catalogProduct->relativeProducts->toArray());
+        $dopCatalogs = get_ids_from_array($catalogProduct->dopCatalogs->toArray());
         $tabs = $this->dispatch(new GetAllTabsQuery());
 
         $catalogProduct->tabs = $catalogProduct->tabs->mapWithKeys(function ($item) {
@@ -89,7 +98,9 @@ class CatalogProductController extends Controller
             'catalogProduct' => $catalogProduct,
             'catalogProducts' => $catalogProducts,
             'catalogProductRelatives' => $catalogProductRelatives,
-            'tabs' => $tabs
+            'tabs' => $tabs,
+            'catalogs' => $catalogs,
+            'dopCatalogs' => $dopCatalogs
         ]);
     }
 

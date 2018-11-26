@@ -62,6 +62,14 @@ class Catalog extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function dopProducts()
+    {
+        return $this->belongsToMany(CatalogProduct::class, 'catalog_dop_products', 'catalog_id', 'product_id');
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function products()
@@ -75,6 +83,14 @@ class Catalog extends Model
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne
      */
     public function image()
+    {
+        return $this->morphOne('App\Image', 'imageable');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function icon()
     {
         return $this->morphOne('App\Image', 'imageable');
     }

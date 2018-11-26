@@ -12,6 +12,7 @@
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <meta name="description" content="@yield('description', '')">
     <meta name="keywords" content="@yield('keywords', '')">
+    <link rel="canonical" href="{{ request()->url() }}"/>
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic%7CCormorant+Garamond:300,400,400i,600,700">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">

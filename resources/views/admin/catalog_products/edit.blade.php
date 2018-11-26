@@ -53,6 +53,15 @@
                                     </select>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="dopCatalogs">Выберите выберите дополнительные категории</label>
+                                    <select class="form-control border-blue border-xs select-search" multiple="multiple" id="dopCatalogs" name="dopCatalogs[]" data-width="100%">
+                                        @foreach($catalogs as $dopCatalog)
+                                            <option value="{{ $dopCatalog->id }}" {{ in_array($dopCatalog->id, $dopCatalogs) ? 'selected' : '' }}>{{ $dopCatalog->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                                 @textarea(['name' => 'text', 'label' => 'Текст рядом со слайдером', 'entity' => $catalogProduct])
                                 @checkbox(['name' => 'is_published', 'label' => 'Опубликовано?', 'entity' => $catalogProduct])
 

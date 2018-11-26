@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Blade;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,6 +30,16 @@ class AppServiceProvider extends ServiceProvider
         Carbon::serializeUsing(function ($carbon) {
             return $carbon->setLocale('ru');
         });
+
+        if ( ! Collection::hasMacro('paginateCollection')) {
+            Collection::macro('paginateCollection',
+                function ($perPage = 15, $page = null, $options = []) {
+                    $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+                    return (new LengthAwarePaginator(
+                        $this->forPage($page, $perPage), $this->count(), $perPage, $page, $options))
+                        ->withPath('');
+                });
+        }
     }
 
     /**

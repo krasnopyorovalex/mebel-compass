@@ -44,6 +44,7 @@ class UpdateCatalogProductCommand
         }
 
         $catalogProduct->relativeProducts()->sync($this->request->post('products'));
+        $catalogProduct->dopCatalogs()->sync($this->request->post('dopCatalogs'));
 
         $this->syncTabs();
 

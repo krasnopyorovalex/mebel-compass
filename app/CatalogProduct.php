@@ -72,6 +72,14 @@ class CatalogProduct extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function dopCatalogs()
+    {
+        return $this->belongsToMany(Catalog::class, 'catalog_dop_products', 'product_id', 'catalog_id');
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function tabs()

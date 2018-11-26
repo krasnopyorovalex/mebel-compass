@@ -30,11 +30,11 @@ class GetAllMenuItemsQuery
      */
     public function handle()
     {
-        $menuItems = MenuItem::with(['menuItems' => function($query) {
+        $menuItems = MenuItem::with(['image','menuItems' => function($query) {
             return ($this->excludeMenuItem
                 ? ($query->where('id', '!=', $this->excludeMenuItem->id)->with(['menuItems' => function($query) {
                     return ($this->excludeMenuItem
-                        ? $query->where('id', '!=', $this->excludeMenuItem->id)
+                        ? $query->where('id', '!=', $this->excludeMenuItem->id)->with(['image'])
                         : []);
                 }]))
                 : []);

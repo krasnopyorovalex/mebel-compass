@@ -36,6 +36,7 @@ class CreateCatalogProductCommand
         $result = $catalogProduct->save();
 
         $catalogProduct->relativeProducts()->attach($this->request->post('products'));
+        $catalogProduct->dopCatalogs()->attach($this->request->post('dopCatalogs'));
 
         $this->attachTabs($catalogProduct);
 

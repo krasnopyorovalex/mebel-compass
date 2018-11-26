@@ -23,6 +23,7 @@
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#main" data-toggle="tab">Основное</a></li>
                         <li><a href="#related" data-toggle="tab">Сопутствующие товары</a></li>
+                        <li><a href="#dopCatalogs" data-toggle="tab">Дополнительные категории товара</a></li>
                     </ul>
 
                     <div class="tab-content">
@@ -66,6 +67,17 @@
                                 <select class="form-control border-blue border-xs select-search" multiple="multiple" id="products" name="products[]" data-width="100%">
                                     @foreach($catalogProducts as $catalogProduct)
                                         <option value="{{ $catalogProduct->id }}">{{ $catalogProduct->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            @submit_btn()
+                        </div>
+                        <div class="tab-pane" id="dopCatalogs">
+                            <div class="form-group">
+                                <label for="dopCatalogs">Выберите дополнительные категории товара</label>
+                                <select class="form-control border-blue border-xs select-search" multiple="multiple" id="dopCatalogs" name="dopCatalogs[]" data-width="100%">
+                                    @foreach($catalogs as $dopCatalog)
+                                        <option value="{{ $dopCatalog->id }}">{{ $dopCatalog->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
