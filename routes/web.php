@@ -19,6 +19,7 @@ Auth::routes();
 Route::post('recall-send', 'RecallController@send')->name('recall.send');
 Route::post('contact-send', 'ContactController@send')->name('contact.send');
 Route::post('product-send', 'CatalogProductController@send')->name('product.send');
+Route::post('product-banner-send', 'ProductBannerController@send')->name('product.banner.send');
 Route::post('plugin-send', 'PluginController@send')->name('plugin.send');
 Route::get('sitemap.xml', 'SitemapController@xml')->name('sitemap.xml');
 Route::get('robots.txt', 'RobotsController@show');

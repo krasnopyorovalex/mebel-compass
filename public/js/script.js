@@ -2108,6 +2108,26 @@ $document.ready(function () {
         });
     }
 
+    var guestbookItems = $('.guestbook__items');
+    if(guestbookItems.length) {
+        guestbookItems.on('click', '.btn__more', function () {
+            var _this = $(this),
+                guestbookId = _this.attr('data-guestbook-id');
+            var items = $('.guestbook__items-' + guestbookId).find('.hidden');
+
+            items.slice(0,4).each(function () {
+                var _this = $(this);
+                return _this.removeClass("hidden");
+            });
+
+            if((items.length - 4) < 1) {
+              return _this.hide();
+            }
+
+            return true;
+        });
+    }
+
     var popupMsg = $('#form-output-global');
     popupMsg.on('click', '.close', function () {
         return $(this).closest('#form-output-global').fadeOut();

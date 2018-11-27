@@ -1,6 +1,6 @@
 <section class="section-lg bg-default text-center hidden-xs">
     <div class="container">
-        <div class="heading-4"><a href="{{ route('page.show', ['alias' => 'мебель-на-заказ-отзывы']) }}">Отзывы клиентов</a></div>
+        <div class="heading-4"><a href="{{ route('page.show', ['alias' => 'our-guestbook']) }}">Отзывы клиентов</a></div>
         <div class="row row-50">
 
             @foreach ($guestbook as $guestbookItem)

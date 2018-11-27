@@ -31,7 +31,7 @@ class ReadySolution extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'name_image', 'price', 'title', 'description', 'keywords', 'text', 'alias', 'is_published'];
+    protected $fillable = ['name', 'name_image', 'price', 'title', 'description', 'keywords', 'text', 'alias', 'is_published', 'published_at', 'name_btn', 'name_form'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne

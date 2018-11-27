@@ -41,11 +41,12 @@ class Page extends Model
     use AutoAliasTrait;
 
     private $templates = [
-        'page.index' => 'Главная',
         'page.page' => 'Информационная',
+        'page.index' => 'Главная',
         'page.contacts' => 'Контакты',
         'page.catalog' => 'Каталог',
-        'page.portfolio' => 'Портфолио'
+        'page.portfolio' => 'Портфолио',
+        'page.guestbook' => 'Отзывы'
     ];
 
     /**

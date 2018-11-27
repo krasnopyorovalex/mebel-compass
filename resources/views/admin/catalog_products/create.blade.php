@@ -47,7 +47,6 @@
 
                             @input(['name' => 'alias', 'label' => 'Alias'])
                             @textarea(['name' => 'text', 'label' => 'Текст рядом со слайдером'])
-                            @checkbox(['name' => 'is_published', 'label' => 'Опубликовано?', 'isChecked' => true])
 
                             <hr>
                             <h3>Табы</h3>

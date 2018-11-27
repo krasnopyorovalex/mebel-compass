@@ -30,6 +30,8 @@
                                     <div class="col-md-8">
                                         @input(['name' => 'name', 'label' => 'Название', 'entity' => $readySolution])
                                         @input(['name' => 'name_image', 'label' => 'Название на картинке', 'entity' => $readySolution])
+                                        @input(['name' => 'name_btn', 'label' => 'Название кнопки', 'entity' => $readySolution])
+                                        @input(['name' => 'name_form', 'label' => 'Название формы', 'entity' => $readySolution])
                                         @input(['name' => 'title', 'label' => 'Title', 'entity' => $readySolution])
                                         @input(['name' => 'description', 'label' => 'Description', 'entity' => $readySolution])
                                         @input(['name' => 'keywords', 'label' => 'Keywords', 'entity' => $readySolution])
@@ -67,9 +69,8 @@
                                         </div>
 
                                         @textarea(['name' => 'text', 'label' => 'Текст', 'entity' => $readySolution])
-                                        @checkbox(['name' => 'in_main', 'label' => 'Отображать на главной?', 'entity' => $readySolution])
-                                        @checkbox(['name' => 'is_published', 'label' => 'Опубликовано?', 'entity' => $readySolution])
 
+                                        @if (count($tabs))
                                         <hr>
                                         <h3>Табы</h3>
 
@@ -79,7 +80,7 @@
                                                 <textarea class="form-control border-blue border-xs tabs__editor" rows="" id="editor-full-tab-{{ $tab->id }}" name="tabs[{{ $tab->id }}]">{{ $readySolution->tabs[$tab->id] ?? '' }}</textarea>
                                             </div>
                                         @endforeach
-
+                                        @endif
                                         @submit_btn()
                                     </div>
                                 </div>

@@ -15,7 +15,7 @@ class UpdateReadySolutionRequest extends Request
     {
         return [
             'name' => 'bail|required|max:512',
-            'name_image' => 'required|max:255',
+            'name_image' => 'string|max:255|nullable',
             'title' => 'required|max:512',
             'description' => 'max:512|nullable',
             'keywords' => 'max:512|nullable',
@@ -26,6 +26,9 @@ class UpdateReadySolutionRequest extends Request
             'imageAlt' => 'string|max:255',
             'imageTitle' => 'string|max:255',
             'price' => 'string|max:127|nullable',
+            'published_at' => 'date',
+            'name_btn' => 'string|max:255|nullable',
+            'name_form' => 'string|max:255|nullable',
             'alias' => [
                 'required',
                 'max:255',

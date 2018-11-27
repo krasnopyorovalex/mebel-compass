@@ -43,7 +43,6 @@
 
                             @input(['name' => 'alias', 'label' => 'Alias', 'entity' => $catalog])
                             @textarea(['name' => 'text', 'label' => 'Текст', 'entity' => $catalog])
-                            @checkbox(['name' => 'is_published', 'label' => 'Опубликовано?', 'entity' => $catalog])
 
                             @submit_btn()
                         </div>

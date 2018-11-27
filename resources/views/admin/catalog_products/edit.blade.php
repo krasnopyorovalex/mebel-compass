@@ -63,8 +63,8 @@
                                 </div>
 
                                 @textarea(['name' => 'text', 'label' => 'Текст рядом со слайдером', 'entity' => $catalogProduct])
-                                @checkbox(['name' => 'is_published', 'label' => 'Опубликовано?', 'entity' => $catalogProduct])
 
+                                @if(count($tabs))
                                 <hr>
                                 <h3>Табы</h3>
 
@@ -74,6 +74,7 @@
                                         <textarea class="form-control border-blue border-xs tabs__editor" rows="" id="editor-full-tab-{{ $tab->id }}" name="tabs[{{ $tab->id }}]">{{ $catalogProduct->tabs[$tab->id] ?? '' }}</textarea>
                                     </div>
                                 @endforeach
+                                @endif
 
                                 @submit_btn()
                             </form>

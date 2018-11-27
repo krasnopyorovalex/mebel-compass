@@ -27,6 +27,8 @@
 
                             @input(['name' => 'name', 'label' => 'Название'])
                             @input(['name' => 'name_image', 'label' => 'Название на картинке'])
+                            @input(['name' => 'name_btn', 'label' => 'Название кнопки'])
+                            @input(['name' => 'name_form', 'label' => 'Название формы'])
                             @input(['name' => 'title', 'label' => 'Title'])
                             @input(['name' => 'description', 'label' => 'Description'])
                             @input(['name' => 'keywords', 'label' => 'Keywords'])
@@ -35,8 +37,8 @@
                             @imageInput(['name' => 'image', 'type' => 'file', 'label' => 'Выберите изображение на компьютере'])
 
                             @textarea(['name' => 'text', 'label' => 'Текст'])
-                            @checkbox(['name' => 'in_main', 'label' => 'Отображать на главной?', 'isChecked' => true])
-                            @checkbox(['name' => 'is_published', 'label' => 'Опубликовано?', 'isChecked' => true])
+
+                            @if (count($tabs))
                             <hr>
                             <h3>Табы</h3>
 
@@ -46,7 +48,7 @@
                                     <textarea class="form-control border-blue border-xs tabs__editor" rows="" id="editor-full-tab-{{ $tab->id }}" name="tabs[{{ $tab->id }}]"></textarea>
                                 </div>
                             @endforeach
-
+                            @endif
                             @submit_btn()
                         </div>
 

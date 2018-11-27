@@ -13,17 +13,14 @@ class GetAllReadySolutionsQuery
     /**
      * @var bool
      */
-    private $forMain;
     private $isPublished;
 
     /**
      * GetAllReadySolutionsQuery constructor.
-     * @param bool $forMain
      * @param bool $isPublished
      */
-    public function __construct(bool $forMain = false, bool $isPublished = false)
+    public function __construct(bool $isPublished = false)
     {
-        $this->forMain = $forMain;
         $this->isPublished = $isPublished;
     }
 
@@ -32,11 +29,7 @@ class GetAllReadySolutionsQuery
      */
     public function handle()
     {
-        $query = ReadySolution::with(['image']);
-
-        if ($this->forMain) {
-            $query->forMain();
-        }
+        $query = ReadySolution::with(['image'])->orderBy('published_at', 'desc');
 
         if ($this->isPublished) {
             $query->where('is_published', '1');

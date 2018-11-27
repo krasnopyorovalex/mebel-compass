@@ -46,7 +46,6 @@
                                 <div class="col-md-12">
                                     @textarea(['name' => 'preview', 'label' => 'Превью статьи', 'id' => 'editor-full2', 'entity' => $article])
                                     @textarea(['name' => 'text', 'label' => 'Текст', 'entity' => $article])
-                                    @checkbox(['name' => 'is_published', 'label' => 'Опубликовано?', 'entity' => $article])
 
                                     @submit_btn()
                                 </div>

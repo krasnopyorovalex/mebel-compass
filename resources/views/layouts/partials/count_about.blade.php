@@ -1,6 +1,6 @@
 <section class="section-lg bg-default text-center hidden-xs">
     <div class="container">
-        <div class="title"><a href="{{ route('page.show', ['alias' => 'мебель-для-гостиниц-от-производителя']) }}">О нас</a></div>
+        <div class="title"><a href="{{ route('page.show', ['alias' => 'mebel-dlya-gostinits-ot-proizvoditelya']) }}">О нас</a></div>
         <div class="row justify-content-md-center row-50">
             @foreach ($countAbout as $ca)
                 <div class="col-md-6 col-lg-4 col-xl-3">

@@ -14,7 +14,7 @@ class CreateReadySolutionRequest extends Request
     {
         return [
             'name' => 'bail|required|max:512',
-            'name_image' => 'required|max:255',
+            'name_image' => 'string|max:255|nullable',
             'title' => 'required|max:512',
             'description' => 'max:512|nullable',
             'keywords' => 'max:512|nullable',
@@ -24,6 +24,9 @@ class CreateReadySolutionRequest extends Request
             'is_published' => 'digits_between:0,1',
             'in_main' => 'digits_between:0,1',
             'image' => 'image',
+            'published_at' => 'date',
+            'name_btn' => 'string|max:255|nullable',
+            'name_form' => 'string|max:255|nullable'
         ];
     }
 

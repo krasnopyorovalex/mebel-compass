@@ -17,6 +17,6 @@ class GuestbookServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('view')->composer('page.index', 'App\Http\ViewComposers\GuestbookComposer');
+        $this->app->make('view')->composer(['page.guestbook', 'page.index'], 'App\Http\ViewComposers\GuestbookComposer');
     }
 }

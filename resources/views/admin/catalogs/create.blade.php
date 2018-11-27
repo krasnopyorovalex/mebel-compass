@@ -35,7 +35,6 @@
                 @imageInput(['name' => 'image', 'type' => 'file', 'label' => 'Выберите изображение на компьютере'])
 
                 @textarea(['name' => 'text', 'label' => 'Текст'])
-                @checkbox(['name' => 'is_published', 'label' => 'Опубликовано?', 'isChecked' => true])
 
                 @submit_btn()
             </form>

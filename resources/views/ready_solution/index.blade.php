@@ -57,7 +57,7 @@
                         </div>
                         <div class="group group-middle">
                             <button class="button button-primary button-icon button-icon-left" data-toggle="modal" data-target="#modalCost">
-                                <span class="icon icon-md linear-icon-chevron-right"></span><span>Узнать стоимость</span>
+                                <span class="icon icon-md linear-icon-chevron-right"></span><span>{{ $readySolution->name_btn }}</span>
                             </button>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
             <div class="modal-dialog__inner">
                 <button class="close" type="button" data-dismiss="modal"></button>
                 <div class="modal-dialog__content">
-                    <div class="heading-6">Форма запроса стоимости</div>
+                    <div class="heading-6">{{ $readySolution->name_form }}</div>
                     <!-- RD Mailform-->
                     <form class="rd-mailform rd-mailform_responsive" method="post" action="{{ route('product.send') }}">
                         @csrf

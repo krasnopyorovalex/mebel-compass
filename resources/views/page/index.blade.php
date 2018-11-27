@@ -19,22 +19,56 @@
                 <div class="col-md-5 col-lg-4 section-lg">
                     <div class="wow fadeInUpSmall heading-2" data-wow-delay=".2s" data-wow-duration="1.2s">{{ $banners->get(1)->name }}</div>
                     <p class="big wow fadeInUpSmall" data-wow-delay=".5s" data-wow-duration="1.2s">{{ strip_tags($banners->get(1)->text) }}</p>
-                    <a class="banner-link wow fadeInUpSmall" href="{{ $banners->get(1)->link }}" data-wow-delay=".7s" data-wow-duration="1.2s">{{ $banners->get(1)->btn_text }}</a>
+                    <a class="banner-link wow fadeInUpSmall" data-toggle="modal" data-target="#modalFreeProject" href="#" data-wow-delay=".7s" data-wow-duration="1.2s">{{ $banners->get(1)->btn_text }}</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal register window-->
+    <div class="modal fade" id="modalFreeProject" role="dialog">
+        <div class="modal-dialog modal-dialog_custom">
+            <!-- Modal content-->
+            <div class="modal-dialog__inner">
+                <button class="close" type="button" data-dismiss="modal"></button>
+                <div class="modal-dialog__content">
+                    <div class="heading-6">Хочу бесплатный проект</div>
+                    <!-- RD Mailform-->
+                    <form class="rd-mailform rd-mailform_responsive" method="post" action="{{ route('product.banner.send') }}">
+                        @csrf
+
+                        <div class="form-wrap form-wrap_icon linear-icon-bag">
+                            <input class="form-input" id="modal-register-fio" type="text" name="product" autocomplete="off">
+                            <label class="form-label" for="modal-register-fio">Какая мебель Вам нужна?</label>
+                        </div>
+
+                        <div class="form-wrap form-wrap_icon linear-icon-telephone">
+                            <input class="form-input" id="modal-register-phone" type="text" name="phone" autocomplete="off" onkeyup="this.value = this.value.replace (/[^0-9+]/, '')" required>
+                            <label class="form-label" for="modal-register-phone">Ваш телефон</label>
+                        </div>
+
+                        <div class="form-wrap form-wrap_icon linear-icon-envelope">
+                            <input class="form-input" id="modal-register-email" type="email" name="email" autocomplete="off">
+                            <label class="form-label" for="modal-register-email">Ваш e-mail</label>
+                        </div>
+
+                        <button class="button button-primary" type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     @endif
 
     <section class="section-lg bg-default">
         <div class="container text-center">
             <div class="heading-4">
-                <a href="{{ route('page.show', ['alias' => 'гостиничная-мебель']) }}">Гостиничная мебель</a>
+                <a href="{{ route('page.show', ['alias' => 'catalog']) }}">Гостиничная мебель</a>
             </div>
             <!-- Bootstrap tabs-->
             <div class="tabs-custom tabs-vertical row no-gutters">
                 <!-- Nav tabs-->
-                <ul class="nav nav-tabs nav-custom nav-custom-tabs col-md-3">
+                <ul class="nav nav-tabs nav-custom nav-custom-tabs col-md-3 category__list">
                     @foreach ($catalogs as $catalog)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('catalog.show', ['alias' => $catalog->alias]) }}">{{ $catalog->name }}</a>
@@ -70,13 +104,14 @@
 
     <section class="recall__me hidden-xs">
         <div class="title__form heading-4">Хочу пуфик в подарок!</div>
+        <a href="#" class="sub__title">условия акции</a>
         <form action="{{ route('recall.send') }}" method="post" id="recall-form">
             @csrf
             <div class="form-group form-wrap_icon linear-icon-man">
                 <input type="text" class="name__filed form-input" value="" placeholder="Ваше имя" name="name" required>
             </div>
             <div class="form-group form-wrap_icon linear-icon-telephone">
-                <input type="text" class="email__field form-input" value="" onkeyup="this.value = this.value.replace (/[^0-9+]/, '')" placeholder="Ваш телефон" name="phone" required>
+                <input type="text" class="email__field form-input" value="" onkeyup="this.value = this.value.replace (/[^0-9+]/, '')" placeholder="Оставьте телефон" name="phone" required>
             </div>
             <div class="form-group">
                 <button class="button button-black" type="submit">Отправить</button>
@@ -117,7 +152,7 @@
 
     <section class="section-lg bg-default text-center hidden-xs">
         <div class="container">
-            <div class="heading-4"><a href="{{ route('page.show', ['alias' => 'мебель-под-заказ-статьи']) }}">Статьи о мебели</a></div>
+            <div class="heading-4"><a href="{{ route('page.show', ['alias' => 'articles']) }}">Статьи о мебели</a></div>
             <div class="row row-60 justify-content-md-center">
 
                 @foreach ($articles as $article)
