@@ -1509,7 +1509,7 @@ $document.ready(function () {
   if (plugins.circleProgress.length) {
     var i;
     for (i = 0; i < plugins.circleProgress.length; i++) {
-      
+
       (function () {
         var proto = $.circleProgress.defaults,
           originalDrawEmptyArc = proto.drawEmptyArc;
@@ -2017,7 +2017,7 @@ $document.ready(function () {
     }(document, "script", "twitter-timeline"));
 
   }
-  
+
   /**
    * RD Range
    * @description Enables RD Range plugin
@@ -2134,4 +2134,4 @@ $document.ready(function () {
     });
 });
 
-//document.oncontextmenu = function (){return false};
+document.oncontextmenu = function (){return false};
