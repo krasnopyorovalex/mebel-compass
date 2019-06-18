@@ -51,7 +51,7 @@
             </div>
             <div class="row row-60">
                 <div class="col-md-3"></div>
-                <div class="col-md-9">
+                <div class="col-md-9 section-divided__main section-divided__main-left">
                     {!! $catalog->text !!}
                 </div>
             </div>
