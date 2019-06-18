@@ -42,17 +42,14 @@
                                     </div>
                                 </div>
                             @endforeach
+                            <div class="col-md-12">
+                                {!! $catalog->text !!}
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 section-divided__aside section__aside-left">
                     @includeWhen($catalogs, 'layouts.partials.catalog_list', ['catalogs' => $catalogs])
-                </div>
-            </div>
-            <div class="row row-60">
-                <div class="col-md-3"></div>
-                <div class="col-md-9 section-divided__main section-divided__main-left">
-                    {!! $catalog->text !!}
                 </div>
             </div>
         </div>
