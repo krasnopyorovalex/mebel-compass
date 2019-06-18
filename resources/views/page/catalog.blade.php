@@ -49,6 +49,11 @@
                     @includeWhen($catalogs, 'layouts.partials.catalog_list', ['catalogs' => $catalogs])
                 </div>
             </div>
+            <div class="row row-60 flex-lg-row-reverse">
+                <div class="col-md-12 col-lg-12">
+                    {!! $catalog->text !!}
+                </div>
+            </div>
         </div>
     </section>
 
