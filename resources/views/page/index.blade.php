@@ -63,7 +63,7 @@
     <section class="section-lg bg-default">
         <div class="container text-center">
             <div class="heading-4">
-                <a href="{{ route('page.show', ['alias' => 'catalog']) }}">Гостиничная мебель</a>
+                <a href="{{ route('page.show', ['alias' => 'catalog']) }}">Каталог мебели</a>
             </div>
             <!-- Bootstrap tabs-->
             <div class="tabs-custom tabs-vertical row no-gutters">
