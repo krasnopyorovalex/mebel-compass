@@ -43,7 +43,7 @@
                                 </div>
                             @endforeach
                             <div class="col-md-12">
-                                {!! $catalog->text !!}
+                                {!! $page->text !!}
                             </div>
                         </div>
                     </div>
