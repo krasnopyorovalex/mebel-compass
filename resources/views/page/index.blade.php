@@ -83,9 +83,11 @@
                             <div class="item">
                                 <div class="product product-grid">
                                     <div class="product-img-wrap">
+                                        @if($catalog->image)
                                         <a href="{{ route('catalog.show', ['alias' => $catalog->alias]) }}">
                                             <img src="{{ $catalog->image->path }}" alt="{{ $catalog->image->alt }}" title="{{ $catalog->image->title }}" width="300" height="300"/>
                                         </a>
+                                        @endif
                                     </div>
                                     <div class="product-caption">
                                         <p>{{ $catalog->sub_title }}</p>
