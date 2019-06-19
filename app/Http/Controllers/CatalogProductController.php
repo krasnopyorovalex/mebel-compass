@@ -37,7 +37,7 @@ class CatalogProductController extends Controller
      */
     public function send(Request $request)
     {
-        Mail::to(['hotel@mebel-compass.com'])->send(new ProductOrdered($request->all()));
+        Mail::to(['hotel@mebel-compass.com','va@mebel-compass.com'])->send(new ProductOrdered($request->all()));
 
         $request->session()->flash('status', 'Благодарим за вашу заявку. Наш менеджер свяжется с вами в ближайшее время');
 

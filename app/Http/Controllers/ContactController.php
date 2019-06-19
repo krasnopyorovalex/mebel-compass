@@ -18,7 +18,7 @@ class ContactController extends Controller
      */
     public function send(ContactRequest $request)
     {
-        Mail::to(['hotel@mebel-compass.com'])->send(new ContactFormSended($request->all()));
+        Mail::to(['hotel@mebel-compass.com','va@mebel-compass.com'])->send(new ContactFormSended($request->all()));
 
         $request->session()->flash('status', 'Благодарим за вашу заявку. Наш менеджер свяжется с вами в ближайшее время');
 

@@ -9,7 +9,7 @@ class PageController extends Controller
 {
     /**
      * @param string $alias
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
     public function show(string $alias = 'index'): View
     {

@@ -18,7 +18,7 @@ class PluginController extends Controller
      */
     public function send(PluginRequest $request)
     {
-        Mail::to(['hotel@mebel-compass.com'])->send(new PluginSended($request->all()));
+        Mail::to(['hotel@mebel-compass.com','va@mebel-compass.com'])->send(new PluginSended($request->all()));
 
         return [
             'message' => 'Благодарим за вашу заявку. Наш менеджер свяжется с вами в ближайшее время',

@@ -18,7 +18,7 @@ class ProductBannerController extends Controller
      */
     public function send(ProductBannerRequest $request)
     {
-        Mail::to(['hotel@mebel-compass.com'])->send(new ProductMainFormSent($request->all()));
+        Mail::to(['hotel@mebel-compass.com','va@mebel-compass.com'])->send(new ProductMainFormSent($request->all()));
 
         $request->session()->flash('status', 'Благодарим за вашу заявку. Наш менеджер свяжется с вами в ближайшее время');
 

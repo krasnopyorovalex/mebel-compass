@@ -3,7 +3,7 @@
         <div class="heading-4"><a href="{{ route('page.show', ['alias' => 'our-guestbook']) }}">Отзывы клиентов</a></div>
         <div class="row row-50">
 
-            @foreach ($guestbook as $guestbookItem)
+            @foreach ($guestbook->take(3) as $guestbookItem)
                 <div class="col-md-6 col-lg-4">
                     <!-- Quote default-->
                     <div class="quote-default quote-default_left-v2">

@@ -104,7 +104,7 @@
 
     <section class="recall__me hidden-xs">
         <div class="title__form heading-4">Хочу пуфик в подарок!</div>
-        <a href="#" class="sub__title">условия акции</a>
+        <a href="{{ route('ready_solution.show', ['alias' => 'akcii-na-mebel']) }}" class="sub__title">условия акции</a>
         <form action="{{ route('recall.send') }}" method="post" id="recall-form">
             @csrf
             <div class="form-group form-wrap_icon linear-icon-man">
