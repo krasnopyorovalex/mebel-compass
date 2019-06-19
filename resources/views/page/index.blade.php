@@ -161,7 +161,9 @@
                     <div class="col-md-6 col-lg-4">
                         <!-- Post classic-->
                         <article class="post-classic post-minimal text-center">
+                            @if($article->image)
                             <img src="{{ $article->image->path }}" alt="{{ $article->image->alt }}" title="{{ $article->image->title }}" width="418" height="315"/>
+                            @endif
                             <div class="post-classic-title">
                                 <div class="heading-6"><a href="{{ route('article.show', ['alias' => $article->alias]) }}">{{ $article->name }}</a></div>
                             </div>
