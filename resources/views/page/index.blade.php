@@ -222,6 +222,6 @@
     </section>
 
     <section class="section-map">
-        <script type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Mzb64TxnY02RHItjvDXPjd2n8H3WmkRV&amp;width=100%&amp;height=451&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+        <script type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Mzb64TxnY02RHItjvDXPjd2n8H3WmkRV&amp;width=100%&amp;height=451&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=false"></script>
     </section>
 @endsection
