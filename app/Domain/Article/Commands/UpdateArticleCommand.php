@@ -41,8 +41,8 @@ class UpdateArticleCommand
         $article = $this->dispatch(new GetArticleByIdQuery($this->id));
         $urlNew = $this->request->post('alias');
 
-        if ($article->getOriginal('alias') != $urlNew) {
-            event(new RedirectDetected($article->getOriginal('alias'), $urlNew, 'article.show'));
+        if ($article->getOriginal('alias') !== $urlNew) {
+            event(new RedirectDetected($article->getOriginal('alias'), str_slug($urlNew), 'article.show'));
         }
 
         if ($this->request->has('image')) {

@@ -41,8 +41,8 @@ class UpdateCatalogCommand
         $catalog = $this->dispatch(new GetCatalogByIdQuery($this->id));
         $urlNew = $this->request->post('alias');
 
-        if ($catalog->getOriginal('alias') != $urlNew) {
-            event(new RedirectDetected($catalog->getOriginal('alias'), $urlNew, 'catalog.show'));
+        if ($catalog->getOriginal('alias') !== $urlNew) {
+            event(new RedirectDetected($catalog->getOriginal('alias'), str_slug($urlNew), 'catalog.show'));
         }
 
         if ($this->request->has('image')) {

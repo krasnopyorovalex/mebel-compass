@@ -39,8 +39,8 @@ class UpdatePageCommand
         $page = $this->dispatch(new GetPageByIdQuery($this->id));
         $urlNew = $this->request->post('alias');
 
-        if ($page->getOriginal('alias') != $urlNew) {
-            event(new RedirectDetected($page->getOriginal('alias'), $urlNew));
+        if ($page->getOriginal('alias') !== $urlNew) {
+            event(new RedirectDetected($page->getOriginal('alias'), str_slug($urlNew)));
         }
 
         return $page->update($this->request->all());

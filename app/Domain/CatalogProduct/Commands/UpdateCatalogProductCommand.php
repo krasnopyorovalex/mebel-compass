@@ -39,8 +39,8 @@ class UpdateCatalogProductCommand
         $catalogProduct = $this->dispatch(new GetCatalogProductByIdQuery($this->id));
         $urlNew = $this->request->post('alias');
 
-        if ($catalogProduct->getOriginal('alias') != $urlNew) {
-            event(new RedirectDetected($catalogProduct->getOriginal('alias'), $urlNew, 'catalog_product.show'));
+        if ($catalogProduct->getOriginal('alias') !== $urlNew) {
+            event(new RedirectDetected($catalogProduct->getOriginal('alias'), str_slug($urlNew), 'catalog_product.show'));
         }
 
         $catalogProduct->relativeProducts()->sync($this->request->post('products'));
