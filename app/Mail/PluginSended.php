@@ -33,7 +33,7 @@ class PluginSended extends Mailable
     public function build()
     {
         return $this->from('kompas.mebel@yandex.ru')
-            ->subject('Заявка на заказ мебели')
+            ->subject('Заявка на заказ мебели(Мебель на заказ)')
             ->view('emails.plugin', [
                 'data' => $this->data
             ]);

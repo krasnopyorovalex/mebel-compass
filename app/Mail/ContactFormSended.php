@@ -29,7 +29,7 @@ class ContactFormSended extends Mailable
     public function build()
     {
         return $this->from('kompas.mebel@yandex.ru')
-            ->subject('Форма: страница контактов')
+            ->subject('Форма: страница контактов(Мебель на заказ)')
             ->view('emails.contact', [
                 'data' => $this->data
             ]);

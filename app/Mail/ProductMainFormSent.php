@@ -33,7 +33,7 @@ class ProductMainFormSent extends Mailable
     public function build()
     {
         return $this->from('kompas.mebel@yandex.ru')
-            ->subject('Форма: хочу бесплатный проект')
+            ->subject('Форма: хочу бесплатный проект(Мебель на заказ)')
             ->view('emails.product_banner', [
                 'data' => $this->data
             ]);

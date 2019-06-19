@@ -17,6 +17,7 @@
             <thead>
             <tr class="border-solid">
                 <th>#</th>
+{{--                <th></th>--}}
                 <th>Название</th>
                 <th>Alias</th>
                 <th>Категория</th>
@@ -24,10 +25,15 @@
                 <th></th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="table__dnd">
             @foreach($catalogProducts as $catalogProduct)
-                <tr>
+                <tr data-id="{{ $catalogProduct->id }}">
                     <td><span class="label label-primary">{{ $loop->iteration }}</span></td>
+{{--                    <td>--}}
+{{--                        <div class="media-left media-middle">--}}
+{{--                            <i class="icon-dots dragula-handle"></i>--}}
+{{--                        </div>--}}
+{{--                    </td>--}}
                     <td>{{ $catalogProduct->name }}</td>
                     <td>{{ $catalogProduct->alias }}</td>
                     <td><span class="label label-primary bg-teal-400">{{ $catalogProduct->catalog->name }}</span></td>
@@ -50,5 +56,8 @@
             </tbody>
         </table>
     </div>
-
+    @push('scripts')
+        <script src="{{ asset('dashboard/assets/js/plugins/ui/dragula.min.js') }}"></script>
+        <script src="{{ asset('dashboard/assets/js/pages/extension_dnd.js') }}"></script>
+    @endpush
 @endsection

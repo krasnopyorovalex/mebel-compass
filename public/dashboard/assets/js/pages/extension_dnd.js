@@ -75,6 +75,7 @@ $(function() {
     //
 
     startDnDImages();
+    //startDnDTable();
 
     // Basic pills
     dragula([document.getElementById('pills-target-left')], {
@@ -135,6 +136,23 @@ function startDnDImages() {
                     icon: 'icon-checkmark3',
                     type: 'success'
                 });;
+            });
+        });
+}
+function startDnDTable() {
+    return dragula([document.getElementById('table__dnd')])
+        .on('out', function (el, container) {
+            var list = [];
+            jQuery('#table__dnd tr').each(function (item) {
+                list[item] = jQuery(this).attr('data-id');
+            });
+            return $.post("#", {'data': list}, function(data){
+                return new PNotify({
+                    title: 'Уведомление от сервера',
+                    text: data.message,
+                    icon: 'icon-checkmark3',
+                    type: 'success'
+                });
             });
         });
 }
