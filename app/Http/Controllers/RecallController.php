@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Forms\RecallRequest;
 use App\Mail\RecallSended;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Http\Request;
 
 /**
  * Class RecallController
@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 class RecallController extends Controller
 {
     /**
-     * @param Request $request
+     * @param RecallRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function send(Request $request)
+    public function send(RecallRequest $request)
     {
         Mail::to(['hotel@mebel-compass.com','va@mebel-compass.com'])->send(new RecallSended($request->all()));
 
