@@ -8,9 +8,11 @@
                             <div class="post-classic-title">
                                 <div class="heading-4"><a href="{{ route('article.show', ['alias' => $article->alias]) }}">{{ $article->name }}</a></div>
                             </div>
+                            @if($article->image)
                             <a href="{{ route('article.show', ['alias' => $article->alias]) }}">
                                 <img src="{{ $article->image->path }}" alt="{{ $article->image->alt }}" title="{{ $article->image->title }}" width="886" height="668"/>
                             </a>
+                            @endif
                             <div class="post-meta">
                                 <div class="group">
                                     <time datetime="{{ Illuminate\Support\Carbon::parse($article->published_at)->format('Y-m-d h:i:s') }}">{{ Illuminate\Support\Carbon::parse($article->published_at)->format('d M Y') }}</time>
