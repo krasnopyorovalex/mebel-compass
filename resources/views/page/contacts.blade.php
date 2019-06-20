@@ -53,7 +53,7 @@
     </section>
 
     <section class="map">
-        <script type="text/javascript" charset="utf-8" async="" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Mzb64TxnY02RHItjvDXPjd2n8H3WmkRV&amp;width=100%&amp;height=450&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+        <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1732816142" width="100%" height="400" frameborder="0"></iframe>
     </section>
 
 @endsection
