@@ -66,7 +66,7 @@ class Catalog extends Model
      */
     public function dopProducts()
     {
-        return $this->belongsToMany(CatalogProduct::class, 'catalog_dop_products', 'catalog_id', 'product_id');
+        return $this->belongsToMany(CatalogProduct::class, 'catalog_dop_products', 'catalog_id', 'product_id')->orderBy('id','desc');
     }
 
     /**
@@ -76,7 +76,7 @@ class Catalog extends Model
     {
         return $this->hasMany('App\CatalogProduct')->with(['images' => function ($query) {
             return $query->where('is_published', '1');
-        }])->orderBy('pos');
+        }])->orderBy('id','desc');
     }
 
     /**
